@@ -1,9 +1,10 @@
-from app import App as app
+from fastapi import FastAPI
+from routes import todo
+
+app: FastAPI = FastAPI()
+
+app.include_router(todo.router)
 
 @app.get("/")
-def main():
-    return {
-        "status": True,
-        "resCode": 200,
-        "message": "Hello, how are you?"
-    }
+async def root():
+    return {"message": "Hello Bigger Applications!"}

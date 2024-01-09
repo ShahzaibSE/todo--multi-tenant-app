@@ -3,6 +3,6 @@ import database
 
 def addToDo():
     return {
-        "status": False,
-        
+        "status": True,
+        "message": "Test successful"
     }
